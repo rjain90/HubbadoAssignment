@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Prime Number</string>
+    <string name="hubbado">Hubbado</string>
+
+    <string name="hint_array_size">Array Size</string>
+
+    <string name="bt_submit">Submit</string>
+</resources>
