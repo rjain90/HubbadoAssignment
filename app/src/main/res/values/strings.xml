@@ -5,4 +5,5 @@
     <string name="hint_array_size">Array Size</string>
 
     <string name="bt_submit">Submit</string>
+    <string name="error_invalid_number">Invalid number</string>
 </resources>

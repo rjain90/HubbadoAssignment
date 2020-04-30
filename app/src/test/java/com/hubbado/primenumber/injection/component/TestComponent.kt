@@ -6,6 +6,6 @@ import javax.inject.Singleton
 
 @Component
 @Singleton
-interface TestComponent: PrimeComponent {
+interface TestComponent {
     fun inject(primeNumberTest: PrimeNumberTest)
 }

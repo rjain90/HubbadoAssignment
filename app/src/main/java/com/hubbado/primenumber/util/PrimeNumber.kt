@@ -1,4 +1,4 @@
-package com.hubbado.primenumber
+package com.hubbado.primenumber.util
 
 import javax.inject.Inject
 import javax.inject.Singleton

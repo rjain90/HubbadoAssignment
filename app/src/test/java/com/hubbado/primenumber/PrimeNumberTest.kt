@@ -2,6 +2,7 @@ package com.hubbado.primenumber
 
 
 import com.hubbado.primenumber.injection.component.DaggerTestComponent
+import com.hubbado.primenumber.util.PrimeNumber
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
