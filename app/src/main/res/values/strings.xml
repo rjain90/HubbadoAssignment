@@ -2,8 +2,13 @@
     <string name="app_name">Prime Number</string>
     <string name="hubbado">Hubbado</string>
 
-    <string name="hint_array_size">Array Size</string>
+    <string name="hint_array_width">Array Width</string>
+    <string name="hint_array_height">Array Height</string>
 
+    <string name="sw_prime">Prime Number</string>
+    <string name="sw_fib">Fibonacci Sequence</string>
+    <string name="sw_add">Addition</string>
+    <string name="sw_mult">Multiplication</string>
     <string name="bt_submit">Submit</string>
     <string name="error_invalid_number">Invalid number</string>
 </resources>

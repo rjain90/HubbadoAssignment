@@ -28,13 +28,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btSubmit.setOnClickListener {
-            if (tietArraySize.text?.isNotBlank() == true)
-                try {
-                    showArray(viewModel.getPrimeNumberArray(Integer.valueOf(tietArraySize.text.toString())))
-                    tilArraySize.isErrorEnabled = false
-                } catch (e: NumberFormatException) {
-                    tilArraySize.error = getString(R.string.error_invalid_number)
-                }
+//            if (tietArraySize.text?.isNotBlank() == true)
+//                try {
+//                    showArray(viewModel.getPrimeNumberArray(Integer.valueOf(tietArraySize.text.toString())))
+//                    tilArraySize.isErrorEnabled = false
+//                } catch (e: NumberFormatException) {
+//                    tilArraySize.error = getString(R.string.error_invalid_number)
+//                }
         }
 
         rvArray.layoutManager = LinearLayoutManager(this)

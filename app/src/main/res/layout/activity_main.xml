@@ -18,35 +18,116 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvHeading2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="@string/app_name"
-        android:textColor="@android:color/black"
-        android:textSize="21sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvHeading1" />
-
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilArraySize"
+        android:id="@+id/tilArrayWidth"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:hint="@string/hint_array_size"
-        app:layout_constraintEnd_toEndOf="parent"
+
+        android:hint="@string/hint_array_width"
+        app:layout_constraintEnd_toStartOf="@id/tilArrayHeight"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvHeading2">
+        app:layout_constraintTop_toBottomOf="@id/tvHeading1">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tietArraySize"
+            android:id="@+id/tietArrayWidth"
             android:layout_width="match_parent"
-            android:inputType="number"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="number" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilArrayHeight"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="@string/hint_array_height"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tilArrayWidth"
+        app:layout_constraintTop_toBottomOf="@id/tvHeading1">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tietArrayHeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tvAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:textSize="18sp"
+        android:text="@string/sw_add"
+        app:layout_constraintEnd_toStartOf="@id/swOperation"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilArrayWidth" />
+
+    <Switch
+        android:id="@+id/swOperation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilArrayWidth" />
+
+    <TextView
+        android:id="@+id/tvMult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/sw_mult"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="18sp"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/swOperation"
+        app:layout_constraintTop_toBottomOf="@id/tilArrayWidth" />
+
+    <TextView
+        android:id="@+id/tvPrime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/sw_prime"
+        android:textSize="18sp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toStartOf="@id/swFunction"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/swOperation" />
+
+    <Switch
+        android:id="@+id/swFunction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/swOperation" />
+
+    <TextView
+        android:id="@+id/tvFib"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/sw_fib"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/swFunction"
+        app:layout_constraintTop_toBottomOf="@id/swOperation" />
 
     <Button
         android:id="@+id/btSubmit"
@@ -56,13 +137,13 @@
         android:text="@string/bt_submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tilArraySize" />
+        app:layout_constraintTop_toBottomOf="@id/swFunction" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvArray"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="12dp"
-        android:id="@+id/rvArray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
