@@ -28,13 +28,39 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btSubmit.setOnClickListener {
-//            if (tietArraySize.text?.isNotBlank() == true)
-//                try {
-//                    showArray(viewModel.getPrimeNumberArray(Integer.valueOf(tietArraySize.text.toString())))
-//                    tilArraySize.isErrorEnabled = false
-//                } catch (e: NumberFormatException) {
-//                    tilArraySize.error = getString(R.string.error_invalid_number)
-//                }
+            var width = 0
+            var height = 0
+            if (tietArrayWidth.text?.isNotBlank() == true && tietArrayHeight.text?.isNotBlank() == true) {
+                try {
+                    width = Integer.valueOf(tietArrayWidth.text.toString())
+                    height = Integer.valueOf(tietArrayHeight.text.toString())
+
+                    if (swFunction.isChecked) {
+                        if (swOperation.isChecked)
+                            showArray(viewModel.getFibonacciMultiplicationArray(width, height))
+                        else
+                            showArray(viewModel.getFibonacciAdditionArray(width, height))
+                    } else {
+                        if (swOperation.isChecked)
+                            showArray(viewModel.getPrimeNumberMultiplicationArray(width, height))
+                        else
+                            showArray(viewModel.getPrimeNumberAdditionArray(width, height))
+                    }
+
+                    tilArrayWidth.isErrorEnabled = false
+                    tilArrayHeight.isErrorEnabled = false
+                } catch (e: NumberFormatException) {
+                    if (width == 0)
+                        tilArrayWidth.error = getString(R.string.error_invalid_number)
+                    else
+                        tilArrayHeight.error = getString(R.string.error_invalid_number)
+                }
+            } else {
+                if (tietArrayWidth.text?.isBlank() == true)
+                    tilArrayWidth.error = getString(R.string.error_invalid_number)
+                else
+                    tilArrayHeight.error = getString(R.string.error_invalid_number)
+            }
         }
 
         rvArray.layoutManager = LinearLayoutManager(this)
